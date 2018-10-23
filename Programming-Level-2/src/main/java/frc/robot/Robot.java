@@ -23,6 +23,8 @@ import frc.robot.subsystems.ExampleSubsystem;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  public static ExampleCommand m_examplecommand = new ExampleCommand(); //New command
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI m_oi;
 
@@ -104,7 +106,7 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void teleopInit() {
+  public void teleopInit() { 
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
@@ -112,6 +114,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+
+    m_examplecommand.start();
   }
 
   /**

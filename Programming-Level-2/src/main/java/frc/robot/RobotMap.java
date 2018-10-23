@@ -15,6 +15,8 @@ package frc.robot;
  */
 public class RobotMap {
   
+  //Designated numbering
+
   public final static int leftDriveMotorOne = 3;
   public final static int leftDriveMotorTwo = 2;
 

@@ -17,7 +17,7 @@ public class OI {
 
   Joystick driveStick = new Joystick(0);
 
-  public double getDriveX()
+  public double getDriveX()    //gets position from stick, from -1 to 1
   {
     return driveStick.getX();
   }
