@@ -14,14 +14,19 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  
   //Designated numbering
 
+  //      DRIVETRAIN MOTORS
   public final static int leftDriveMotorOne = 3;
   public final static int leftDriveMotorTwo = 2;
-
   public final static int rightDriveMotorOne = 1;
   public final static int rightDriveMotorTwo = 0;
+
+
+  //     PICK-UP MOTORS
+  public final static int rightHandMotor = 6;
+  public final static int leftHandMotor = 7;
+  public final static int wristMotor = 9;
 
 
   // For example to map the left and right motors, you could define the

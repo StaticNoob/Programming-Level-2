@@ -30,16 +30,18 @@ public class ExampleSubsystem extends Subsystem {
 
   public void DriveTrain()
   {
-    this.r0 = new WPI_TalonSRX(RobotMap.rightDriveMotorOne);
+
+    //Connecting each Talon to each Drive Motor
+    this.r0 = new WPI_TalonSRX(RobotMap.rightDriveMotorOne);   
     this.r1 = new WPI_TalonSRX(RobotMap.rightDriveMotorTwo);
     this.l0 = new WPI_TalonSRX(RobotMap.leftDriveMotorOne);
     this.l1 = new WPI_TalonSRX(RobotMap.leftDriveMotorTwo);
 
 
     this.r = new SpeedControllerGroup(r0, r1);
-    this.r = new SpeedControllerGroup(l0, l1);
+    this.l = new SpeedControllerGroup(l0, l1);
 
-    r1.follow(r0);
+    r1.follow(r0);    //Set motor to match another motor
     l1.follow(l0);
 
     this.r.setInverted(false);
@@ -56,6 +58,7 @@ public class ExampleSubsystem extends Subsystem {
   }
 */
 
+// Y value (forward backward), Z value (rotate)
   public void arcadeNoConstants(double moveValue, double rotateValue)   
   {
     drive.arcadeDrive(moveValue, rotateValue);
