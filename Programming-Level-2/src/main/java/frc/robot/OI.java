@@ -15,8 +15,11 @@ import edu.wpi.first.wpilibj.*;
  */
 public class OI {
 
-  Joystick driveStick = new Joystick(0);
+  public final Joystick driveStick = new Joystick(0);   //Drive Stick (for movement)
+  public final Joystick operatorStick = new Joystick(1);   //Operator Stick (for hand and wrist)
 
+
+  //   ------- Drive Stick --------- 
   public double getDriveX()    //gets position from stick, from -1 to 1
   {
     return driveStick.getX();
@@ -31,6 +34,24 @@ public class OI {
   {
     return driveStick.getZ();
   }
+
+  //  ---------- Operator Stick ----------
+
+  public double getOperatorY()
+  {
+    return operatorStick.getY();
+  }
+
+  public double getOperatorX()
+  {
+    return operatorStick.getX();
+  }
+  
+  public double getOperatorZ()
+  {
+    return operatorStick.getZ();
+  }
+
 
 
 
