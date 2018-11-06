@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.buttons.*;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,8 +17,13 @@ import edu.wpi.first.wpilibj.*;
  */
 public class OI {
 
+  //JOYSTICKS
   public final Joystick driveStick = new Joystick(0);   //Drive Stick (for movement)
   public final Joystick operatorStick = new Joystick(1);   //Operator Stick (for hand and wrist)
+  
+
+
+
 
 
   //   ------- Drive Stick --------- 
@@ -52,8 +59,7 @@ public class OI {
     return operatorStick.getZ();
   }
 
-
-
+  // -------------- Operator Buttons -------- public Button sendButton(){
 
 
 
