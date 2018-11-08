@@ -23,9 +23,6 @@ public class OI {
   
 
 
-
-
-
   //   ------- Drive Stick --------- 
   public double getDriveX()    //gets position from stick, from -1 to 1
   {
@@ -58,8 +55,6 @@ public class OI {
   {
     return operatorStick.getZ();
   }
-
-  // -------------- Operator Buttons -------- public Button sendButton(){
 
 
 
