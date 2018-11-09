@@ -21,25 +21,12 @@ public class HandSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-    public WPI_TalonSRX rh;
-    public WPI_TalonSRX lh;
-    public WPI_TalonSRX w;
+    public WPI_TalonSRX rh = new WPI_TalonSRX(RobotMap.rightHandMotor);
+    public WPI_TalonSRX lh = new WPI_TalonSRX(RobotMap.leftHandMotor);
+    public WPI_TalonSRX w = new WPI_TalonSRX(RobotMap.wristMotor);
 
 
 
-  public void PickUpHand()
-  {
-
-    //Connecting each Talon to each Drive Motor
-    this.rh = new WPI_TalonSRX(RobotMap.rightHandMotor);   
-    this.lh = new WPI_TalonSRX(RobotMap.leftHandMotor);
-    this.w = new WPI_TalonSRX(RobotMap.wristMotor);
-
-
-
-
-
-  }
 /* -- FOR LATER --
   public void arcade (double moveValue, double rotateValue)
   {
