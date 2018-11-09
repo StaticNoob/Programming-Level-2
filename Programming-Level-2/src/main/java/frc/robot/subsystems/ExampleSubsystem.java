@@ -28,7 +28,7 @@ public class ExampleSubsystem extends Subsystem {
 
   public WPI_TalonSRX r0, r1, l0, l1;  //declares 4 talons, Talons regulate voltage given to motor
 
-  public void DriveTrain()
+  public ExampleSubsystem()
   {
 
     //Connecting each Talon to each Drive Motor
