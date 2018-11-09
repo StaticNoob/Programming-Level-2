@@ -24,6 +24,7 @@ public class HandSubsystem extends Subsystem {
     public WPI_TalonSRX rh;
     public WPI_TalonSRX lh;
     public WPI_TalonSRX w;
+    private double DAMPENER = 0.5;
 
 
 
@@ -46,8 +47,8 @@ public class HandSubsystem extends Subsystem {
 
     public void handShoot()
     {
-      rh.set(1);
-      lh.set(1);
+      rh.set(1 - DAMPENER);
+      lh.set(1 - DAMPENER);
     }
 
     public void handStop()
@@ -58,13 +59,13 @@ public class HandSubsystem extends Subsystem {
 
     public void handSuck()
     {
-      rh.set(-1);
-      lh.set(-1);
+      rh.set(-1 + DAMPENER);
+      lh.set(-1 + DAMPENER);
     }
 
     public void wristMove(double moveVal)
     {   
-        w.set(moveVal);
+        w.set(moveVal - DAMPENER);
     }
 
 
