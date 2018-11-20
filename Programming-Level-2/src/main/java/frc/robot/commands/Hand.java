@@ -52,9 +52,32 @@ public class Hand extends Command {
       Robot.m_handsubsystem.handStop();
     }
 
-    //Hand 
+    //Wrist 
     Robot.m_handsubsystem.wristMove(Robot.m_oi.getOperatorY());
 
+
+
+    //----------------- PNEUMATICS (Hand Open/Close) -----------------
+
+    //Hand Open
+    if (Robot.m_oi.operatorStick.getRawButtonPressed(10))
+    {
+      Robot.m_handsubsystem.handSolenoidOpen();
+    }
+    else
+    {
+      Robot.m_handsubsystem.handSolenoidStop();
+    }
+
+    //Hand Close
+    if (Robot.m_oi.operatorStick.getRawButtonPressed(8))
+    {
+      Robot.m_handsubsystem.handSolenoidClose();
+    }
+    else
+    {
+      Robot.m_handsubsystem.handSolenoidStop();
+    }
 
   }
 

@@ -29,6 +29,12 @@ public class RobotMap {
   public final static int wristMotor = 9;
 
 
+  //     PNEUMATICS  
+  public final static int handRotatorSolenoidChannelIn = 0; 
+  public final static int handRotatorSolenoidChannelOut = 1; 
+  public final static int pcmID = 61; 
+
+
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   // public static int leftMotor = 1;

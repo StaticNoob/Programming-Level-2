@@ -9,8 +9,7 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
@@ -26,6 +25,7 @@ public class HandSubsystem extends Subsystem {
     public WPI_TalonSRX w;
     private double HAND_DAMPENER = 0.5;
     private double WRIST_DAMPENER = 0.5;
+    public DoubleSolenoid ds;
 
 
 
@@ -37,6 +37,7 @@ public class HandSubsystem extends Subsystem {
     this.rh = new WPI_TalonSRX(RobotMap.rightHandMotor);   
     this.lh = new WPI_TalonSRX(RobotMap.leftHandMotor);
     this.w = new WPI_TalonSRX(RobotMap.wristMotor);
+    this.ds = new DoubleSolenoid(RobotMap.pcmID, RobotMap.handRotatorSolenoidChannelIn, RobotMap.handRotatorSolenoidChannelOut);
 
 
   }
@@ -67,9 +68,37 @@ public class HandSubsystem extends Subsystem {
 
     public void wristMove(double moveVal)
     {   
-        w.set(moveVal - WRIST_DAMPENER);
+      w.set(moveVal - WRIST_DAMPENER);
     }
 
+
+    //----------------- PNEUMATICS (Hand Open/Close) -----------------
+
+    /**
+    *     NO IDEA IF THIS DOES I THINK IT DOES
+    */
+    public void handSolenoidOpen()  
+    {
+      //FIND OUT WHAT kFORWARD DOES
+      ds.set(DoubleSolenoid.Value.kForward);
+    }
+
+    /**
+    *     NO IDEA IF THIS DOES I THINK IT DOES
+    */
+    public void handSolenoidClose()    
+    {
+      //FIND OUT WHAT kREVERS DOES
+      ds.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    /** 
+     *      I THINK THIS SHOULD STOP THE COMPRESSOR MOVEMENT
+    */
+    public void handSolenoidStop()   
+    {
+      ds.set(DoubleSolenoid.Value.kOff);
+    }
 
 
   @Override
