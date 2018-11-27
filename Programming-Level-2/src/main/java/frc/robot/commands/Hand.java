@@ -37,20 +37,16 @@ public class Hand extends Command {
     {
       Robot.m_handsubsystem.handShoot();
     } 
+    //Hand Suck
+    else if (Robot.m_oi.operatorStick.getRawButtonPressed(11))
+    {
+      Robot.m_handsubsystem.handSuck();
+    }
     else
     {
       Robot.m_handsubsystem.handStop();
     }
 
-    //Hand Suck
-    if (Robot.m_oi.operatorStick.getRawButtonPressed(11))
-    {
-      Robot.m_handsubsystem.handSuck();
-    } 
-    else
-    {
-      Robot.m_handsubsystem.handStop();
-    }
 
     //Wrist 
     Robot.m_handsubsystem.wristMove(Robot.m_oi.getOperatorY());
