@@ -60,7 +60,7 @@ public class DriverSubsystem extends Subsystem {
 // Y value (forward backward), Z value (rotate)
   public void arcadeNoConstants(double moveValue, double rotateValue)   
   {
-    drive.arcadeDrive(moveValue, rotateValue);
+    drive.arcadeDrive(-moveValue, rotateValue);
 
   }
 
