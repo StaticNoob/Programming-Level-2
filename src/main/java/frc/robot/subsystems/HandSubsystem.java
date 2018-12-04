@@ -52,8 +52,8 @@ public class HandSubsystem extends Subsystem {
 
     public void handShoot()
     {
-      rh.set(1 - HAND_DAMPENER);
-      lh.set(1 - HAND_DAMPENER);
+      rh.set(1 * HAND_DAMPENER);
+      lh.set(1 * HAND_DAMPENER);
     }
 
     public void handStop()
@@ -64,13 +64,13 @@ public class HandSubsystem extends Subsystem {
 
     public void handSuck()
     {
-      rh.set(-1 + HAND_DAMPENER);
-      lh.set(-1 + HAND_DAMPENER);
+      rh.set(-1 * HAND_DAMPENER);
+      lh.set(-1 * HAND_DAMPENER);
     }
 
     public void wristMove(double moveVal)
     {   
-      w.set(moveVal - WRIST_DAMPENER);
+        w.set(moveVal * WRIST_DAMPENER);
     }
 
 
