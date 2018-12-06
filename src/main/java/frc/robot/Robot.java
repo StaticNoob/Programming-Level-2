@@ -17,6 +17,8 @@ import frc.robot.commands.Hand;
 import frc.robot.subsystems.DriverSubsystem;
 import frc.robot.subsystems.HandSubsystem;
 
+
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -122,9 +124,9 @@ public class Robot extends TimedRobot {
       m_autonomousCommand.cancel();
     }
 
+
     m_drivercommand.start(); // STARTS DRIVE COMMAND
     m_handcommand.start();    // STARTS HAND COMMAND
-
   }
 
   /**

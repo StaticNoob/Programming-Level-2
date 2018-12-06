@@ -11,13 +11,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 
+
 /**
  * An example command.  You can replace me with your own command.
  */
 public class Hand extends Command {
   public Hand() {
     // Use requires() here to declare subsystem dependencies
-
     requires(Robot.m_handsubsystem);
 
   }
@@ -32,22 +32,22 @@ public class Hand extends Command {
   protected void execute() {
 
     //Hand Shoot
-    while (Robot.m_oi.operatorStick.getRawButtonPressed(12))
+    if (Robot.m_oi.operatorStick.getRawButtonPressed(12))
     {
       Robot.m_handsubsystem.handShoot();
       
-      if (!Robot.m_oi.operatorStick.getRawButtonPressed(12))
+      if (Robot.m_oi.operatorStick.getRawButtonReleased(12))
       {
         Robot.m_handsubsystem.handStop();
       }
     } 
 
     //Hand Suck
-    while (Robot.m_oi.operatorStick.getRawButtonPressed(11))
+    if (Robot.m_oi.operatorStick.getRawButtonPressed(11))
     {
       Robot.m_handsubsystem.handSuck();
 
-      if (!Robot.m_oi.operatorStick.getRawButtonPressed(11))
+      if (Robot.m_oi.operatorStick.getRawButtonReleased(11))
       {
         Robot.m_handsubsystem.handStop();
       }
@@ -61,11 +61,11 @@ public class Hand extends Command {
     //----------------- PNEUMATICS (Hand Open/Close) -----------------
 
     //Hand Open
-    while (Robot.m_oi.operatorStick.getRawButtonPressed(10))
+    if (Robot.m_oi.operatorStick.getRawButtonPressed(10))
     {
       Robot.m_handsubsystem.handSolenoidOpen();
 
-      if(!Robot.m_oi.operatorStick.getRawButtonPressed(10))
+      if(Robot.m_oi.operatorStick.getRawButtonReleased(10))
       {
         Robot.m_handsubsystem.handSolenoidStop();
       }
@@ -77,7 +77,7 @@ public class Hand extends Command {
     {
       Robot.m_handsubsystem.handSolenoidClose();
 
-      if(!Robot.m_oi.operatorStick.getRawButtonPressed(9))
+      if(Robot.m_oi.operatorStick.getRawButtonReleased(9))
       {
         Robot.m_handsubsystem.handSolenoidStop();
       }
