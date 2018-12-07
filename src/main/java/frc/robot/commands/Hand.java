@@ -35,22 +35,22 @@ public class Hand extends Command {
     if (Robot.m_oi.operatorStick.getRawButtonPressed(12))
     {
       Robot.m_handsubsystem.handShoot();
-      
-      if (Robot.m_oi.operatorStick.getRawButtonReleased(12))
-      {
-        Robot.m_handsubsystem.handStop();
-      }
     } 
+
+    if (Robot.m_oi.operatorStick.getRawButtonReleased(12))
+    {
+      Robot.m_handsubsystem.handStop();
+    }
 
     //Hand Suck
     if (Robot.m_oi.operatorStick.getRawButtonPressed(11))
     {
       Robot.m_handsubsystem.handSuck();
+    }
 
-      if (Robot.m_oi.operatorStick.getRawButtonReleased(11))
-      {
-        Robot.m_handsubsystem.handStop();
-      }
+    if (Robot.m_oi.operatorStick.getRawButtonReleased(11))
+    {
+      Robot.m_handsubsystem.handStop();
     }
 
     //Wrist 
@@ -64,23 +64,22 @@ public class Hand extends Command {
     if (Robot.m_oi.operatorStick.getRawButtonPressed(10))
     {
       Robot.m_handsubsystem.handSolenoidOpen();
-
-      if(Robot.m_oi.operatorStick.getRawButtonReleased(10))
-      {
-        Robot.m_handsubsystem.handSolenoidStop();
-      }
     }
 
+    if(Robot.m_oi.operatorStick.getRawButtonReleased(10))
+    {
+      Robot.m_handsubsystem.handSolenoidStop();
+    }
 
     //Hand Close
-    while (Robot.m_oi.operatorStick.getRawButtonPressed(9))
+    if (Robot.m_oi.operatorStick.getRawButtonPressed(9))
     {
       Robot.m_handsubsystem.handSolenoidClose();
+    }
 
-      if(Robot.m_oi.operatorStick.getRawButtonReleased(9))
-      {
+    if(Robot.m_oi.operatorStick.getRawButtonReleased(9))
+    {
         Robot.m_handsubsystem.handSolenoidStop();
-      }
     }
 
   }

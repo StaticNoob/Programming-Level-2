@@ -40,7 +40,8 @@ public class HandSubsystem extends Subsystem {
     this.ds = new DoubleSolenoid(RobotMap.pcmID, RobotMap.handRotatorSolenoidChannelIn, RobotMap.handRotatorSolenoidChannelOut);
     this.comp = new Compressor(RobotMap.pcmID);
 
-    comp.stop();
+    comp.start();
+    //comp.setClosedLoopControl(false);
 
   }
 /* -- FOR LATER --

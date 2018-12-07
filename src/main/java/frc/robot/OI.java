@@ -21,8 +21,6 @@ public class OI {
   public final Joystick driveStick = new Joystick(0);   //Drive Stick (for movement)
   public final Joystick operatorStick = new Joystick(1);   //Operator Stick (for hand and wrist)
   
-
-
   //   ------- Drive Stick --------- 
   public double getDriveX()    //gets position from stick, from -1 to 1
   {
